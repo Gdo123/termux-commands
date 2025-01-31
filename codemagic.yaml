@@ -2,7 +2,6 @@ workflows:
   default:
     name: Build and test Android
     environment:
-      vars:
     scripts:
       - echo "Starting Android build"
       - |
