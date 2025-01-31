@@ -3,7 +3,7 @@ workflows:
     name: Build and test Android
     environment:
       vars:
-        JAVA_HOME: /opt/android-sdk-linux/tools/bin
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
     scripts:
       - echo "Starting Android build"
       - ./gradlew build
