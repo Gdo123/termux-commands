@@ -1,19 +1,11 @@
 workflows:
   default:
     name: Build and test Android
+    environment:
+      vars:
+        JAVA_HOME: /data/data/com.termux/files/usr/lib/jvm/java-17-openjdk
     scripts:
       - echo "Starting Android build"
-      - |
-        if [ -d "/usr/lib/jvm/java-17-openjdk" ] ; then
-          export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
-        elif [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ] ; then
-          export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
-        elif [ -d "/usr/lib/jvm/java-11-openjdk-amd64" ] ; then
-          export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-        else
-          echo "No valid JAVA_HOME found"
-          exit 1
-        fi
-        ./gradlew build
+      - ./gradlew build
     artifacts:
       - build/**/outputs/**/*.apk
