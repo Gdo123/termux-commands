@@ -1,0 +1,12 @@
+workflows:
+  default:
+    name: Build and test Android
+    environment:
+      vars:
+        # أي متغيرات بيئية يحتاجها مشروعك
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk
+    scripts:
+      - echo "Starting Android build"
+      - ./gradlew build
+    artifacts:
+      - build/**/outputs/**/*.apk
