@@ -3,7 +3,7 @@ workflows:
     name: Build and test Android
     environment:
       vars:
-        JAVA_HOME: /data/data/com.termux/files/usr/lib/jvm/java-17-openjdk
+        JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64
     scripts:
       - echo "Starting Android build"
       - ./gradlew build
