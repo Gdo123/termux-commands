@@ -3,8 +3,7 @@ workflows:
     name: Build and test Android
     environment:
       vars:
-        # أي متغيرات بيئية يحتاجها مشروعك
-        JAVA_HOME: /usr/lib/jvm/java-11-openjdk
+        JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
     scripts:
       - echo "Starting Android build"
       - ./gradlew build
